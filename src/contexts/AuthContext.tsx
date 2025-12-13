@@ -109,6 +109,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       const { error: profileError } = await supabase.from('profiles').insert({
         id: authData.user.id,
         full_name: data.fullName,
+        email: authData.user.email, // ✅ REQUIRED FIX
         role: data.role,
         company_name: data.companyName,
         iec_code: data.iecCode,
@@ -117,6 +118,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         business_type: data.businessType,
         is_approved: false,
       });
+
 
       if (profileError) throw profileError;
 
