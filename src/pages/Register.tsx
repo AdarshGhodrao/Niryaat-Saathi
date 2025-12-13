@@ -15,7 +15,7 @@ export const Register = () => {
     password: '',
     confirmPassword: '',
     fullName: '',
-    role: 'exporter' as 'exporter' | 'importer',
+    role: 'Exporter' as 'Exporter' | 'Importer',
     companyName: '',
     iecCode: '',
     country: 'India',
@@ -191,11 +191,11 @@ export const Register = () => {
                   name="role"
                   value={formData.role}
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-slate-900 dark:text-white"
+                  className="w-full px-4 py-2.5 ..."
                   required
                 >
-                  <option value="exporter">Exporter</option>
-                  <option value="importer">Importer</option>
+                  <option value="Exporter">Exporter</option>
+                  <option value="Importer">Importer</option>
                 </select>
               </div>
 

@@ -20,7 +20,7 @@ interface SignUpData {
   email: string;
   password: string;
   fullName: string;
-  role: 'exporter' | 'importer';
+  role: 'Exporter' | 'Importer';
   companyName: string;
   iecCode: string;
   country: string;
@@ -122,16 +122,18 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
       if (profileError) throw profileError;
 
+      const userId = authData.user.id;
+
       if (data.hsCodes.length > 0) {
-        const hsCodesData = data.hsCodes.map(code => ({
-          user_id: authData.user.id,
+        const hsCodesData = data.hsCodes.map((code) => ({
+          user_id: userId,
           hs_code: code,
         }));
 
         const { error: hsError } = await supabase
-          .from('user_hs_codes')
+          .from('user_hs_codes' as any)
           .insert(hsCodesData);
-
+          
         if (hsError) console.error('Error inserting HS codes:', hsError);
       }
 
