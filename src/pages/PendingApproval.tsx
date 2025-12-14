@@ -50,7 +50,10 @@ export const PendingApproval = () => {
               <span className="font-medium">IEC Code:</span> {profile?.iec_code}
               <br />
               <span className="font-medium">Role:</span>{' '}
-              {profile?.role.charAt(0).toUpperCase() + profile?.role.slice(1)}
+              {profile?.role
+                ? profile.role.charAt(0).toUpperCase() + profile.role.slice(1)
+                : ''}
+
             </p>
           </div>
 

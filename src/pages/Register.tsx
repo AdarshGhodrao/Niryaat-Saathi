@@ -87,14 +87,16 @@ export const Register = () => {
       phoneNumber: formData.phoneNumber,
       businessType: formData.businessType,
       hsCodes: formData.hsCodes,
+
     });
 
     if (error) {
       setError(error.message);
       setLoading(false);
     } else {
-      navigate('/pending-approval');
+      navigate('/'); // ✅ or '/dashboard'
     }
+
   };
 
   return (
