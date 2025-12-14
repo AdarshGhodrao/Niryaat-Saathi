@@ -94,7 +94,7 @@ export const Register = () => {
       setError(error.message);
       setLoading(false);
     } else {
-      navigate('/'); // ✅ or '/dashboard'
+      navigate('/dashboard'); // ✅ or '/dashboard'
     }
 
   };

@@ -11,7 +11,7 @@ interface ProtectedRouteProps {
 export const ProtectedRoute = ({
   children,
   allowedRoles,
-  requireApproval = true,
+  requireApproval = false,
 }: ProtectedRouteProps) => {
   const { user, profile, loading } = useAuth();
 
